@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 40px">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/">ClientPanel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" routerLink="/" *ngIf="isLogged">Dashboard</a>
+                </li>
+            </ul>
+
+            <div class="form-inline my-2 my-lg-0">
+                <a class="btn btn-outline-primary my-2 my-sm-0 login" routerLink="/login" *ngIf="!isLogged">Login</a>
+                <a class="btn my-2 my-sm-0" routerLink="/registre" *ngIf="!isLogged">Register</a>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,3 +1,16 @@
 <div class="container">
-    <h1>Welcome {{username}}</h1>
+
+    <!-- Dynamic Component -->
+    <template #alertContainer></template>
+    <button (click)="createComponent('success')" class="btn btn-success mr-4">Create success alert</button>
+    <button (click)="createComponent('danger')" class="btn btn-danger">Create danger alert</button>
+
+    <ul class="list-group mt-4">
+        <li class="list-group-item">Name: {{ userData.username | uppercase }}</li>
+        <li class="list-group-item">Salary: {{ userData.salary | currency }}</li>
+        <li class="list-group-item">Rate: {{ userData.rate | number:'1.2-2' }}</li>
+        <li class="list-group-item">Last login: {{ userData.date | date:'yyyy/mm/dd - hh:mm a' }}</li>
+        <!-- Check the pipes file to see the functionality of this pipe -->
+        <li class="list-group-item">Description: {{ userData.description | trimText:50 }}</li>
+    </ul>
 </div>
